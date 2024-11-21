@@ -27,9 +27,9 @@ console.log(one+two+three)
 // another method to add and subtract//
 var totalMarks=one+two+three;
 console.log(totalMarks)
-//6//
+//6 update automatically year //
 var DOB= 2004;
-var currentYear=2023;
+var currentYear=new Date().getFullYear();
 
 console.log(currentYear-DOB)
 //@nother//
@@ -44,18 +44,26 @@ console.log(second)
 //There are four type of data //
 //number //
 var number= 55.66;
-console.log("this is number"+ number)
+console.log("this is number"+  number)
 // string data with double quotes as a value//
 var love="Hanuman";
 console.log("This is string" + love)
 //boolean data 
 //true and false condition//
 //complete 💯//
-var isAHoliday=false;
-if (isAHoliday) {
-  console.log("stayHome")
+var random = Math.random() * 100
+console.log("this is random :", random);
+let situation;
+if (random >= 1 && random <= 50) {
+  situation = true;  // Assign true if within range
 } else {
-  console.log("goToSchool")
+  situation = false; // Assign false otherwise
+}
+  // Optionally, show different messages based on the Boolean value
+if (situation) {
+  console.log("Go to school!");
+} else {
+  console.log("Stay home!");
 }
 //we can also use ternary operator here(?)by giving condition//
 
@@ -91,11 +99,14 @@ var n=3;
 console.log(r**n)
 // increment(++)//
 //decrement(--)//
-//not proper work 💯//
 var f=6;
-console.log(f--)
-console.log(f++)
-
+console.log(++f);
+var g=6;
+console.log(--g);
+var h=6;
+console.log(h++);
+var i=6;
+console.log(i--);
 // additional assignment//
 var fi=3;
 var si=3;
@@ -202,14 +213,14 @@ console.log(backtip)
 var age="sixteen";
 console.log(`my age is ${age}`)
 
-//
+//index and indexOf start from 0//
 var basket =["baanana","pineapple","orange","grapes","guava"]
 console.log(basket.indexOf("guava"));
 
 var basket =["baanana","pineapple","orange","grapes","guava"]
 var find= basket.indexOf("guava");
 console.log("this is another",find)
-//if there is no value in array//
+//if there is no value in array then show negative values-1//
 console.log(basket.indexOf("watermelon"));
 
 //concat //
@@ -241,7 +252,7 @@ var yourAge=27;
 if(yourAge>=18){
   console.log("You are also eligible")
 }
-// nesterd condition for join to if-else condition//
+// nesterd condition for join to if-else condition nested//
 var rupees=70;
 if(rupees>50){
 if(rupees>100){
@@ -263,7 +274,7 @@ if(quantity>=100){
 } else {
   console.log("Weak performance ")
 }
-// switch case //
+// switch case num value is executed by given below case same value //
 var num=6;
 switch (num){
   case 8:
@@ -280,7 +291,7 @@ switch (num){
     break;
 
 }
-//another//
+//another Ram same case//
 var name="Ram";
 switch (name){
   case "sohan":
@@ -297,6 +308,8 @@ switch (name){
         break;
 }
 //break is not required everyone//
+
+
 for(var counter=1;
 counter<=10;
 counter++){
@@ -337,7 +350,7 @@ for(var counter=1;counter<=5;counter++){
 //continue//
 //in this 2 is not exicute//
 //i==2 then 2 is not show and i==5 then 5 is not show or i=%2 then 2 divisible is not show //
-userInputValue=50;
+userInputValue=10;
 for(var i=1;i<=userInputValue;i++){
   if(i==2){
     continue;
@@ -404,6 +417,20 @@ function four(){
     four++;
   }
 }
+//--------------------------------
+//input type table//
+document.getElementById("tableForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevent form from submitting traditionally
+    const number = document.getElementById("numberInput").value;
+    let result = `<h3>Multiplication Table for ${number}</h3><ul>`;
+    
+    for (let i = 1; i <= 10; i++) {
+      result += `<li>${number} x ${i} = ${number * i}</li>`;
+    }
+    
+    result += `</ul>`;
+    document.getElementById("tableResult").innerHTML = result;
+  });
 // argument topic -------------------------------//
 //argument value //
 function sip(red){
@@ -437,6 +464,30 @@ function evenOdd(number){
  
 }
 evenOdd(3);
+
+//-------_------------------_--_---
+document.getElementById("evenOdd").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent form submission
+  const number = parseInt(document.getElementById("inputNumber").value, 10); // Get the input number
+  let result;
+
+  // Function to check even or odd
+  function evenOdd(number) {
+    if (number % 2 === 0) {
+      return `${number} is even.`;
+    } else {
+      return `${number} is odd.`;
+    }
+  }
+
+  result = evenOdd(number); // Call the function with the input number
+
+  // Display the result
+  document.getElementById("numberResult").innerHTML = `<h3>${result}</h3>`;
+});
+
+//--------_----------------_---_---
+
 // true and false value//
 function read(numbers){
 if(numbers%3==0){
